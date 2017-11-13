@@ -4,6 +4,7 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
+import org.hibernate.internal.SessionFactoryImpl;
 import org.junit.Test;
 
 import com.itheima.domain.Customer;
@@ -29,7 +30,7 @@ public class Demo1 {
 		Transaction transaction = session.beginTransaction();
 		/*5.编写保存代码*/
 		Customer customer = new Customer();
-		customer.setCust_name("测试");
+		customer.setCust_name("测试4");
 		customer.setCust_level("2");
 		customer.setCust_phone("110");
 		/*保存客户*/

@@ -17,8 +17,28 @@
 		<property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
 		
 		
+		
+		
+		<!-- 可选配置 -->
+		<!-- 控制台打印SQL语句 -->
+		<property name="hibernate.show_sql">true</property>
+		<!-- 控制台格式化打印的SQL语句 -->
+		<property name="hibernate.format_sql">true</property>
+		<!-- 定义表的自动生成策略 -->
+		<!-- 先删除原来的表(如果存在)，再创建新表 -->
+		<!--  <property name="hibernate.hbm2ddl.auto">create</property>-->
+		<!-- 先删除原来的表(如果存在)，再创建新表，插入数据(如果有),用完之后,最后进行删除 -->
+		<!-- <property name="hibernate.hbm2ddl.auto">create-drop</property> -->
+		<!-- 
+			1.如果原来的表不存在，可以帮我们创建新表，并且插入数据
+			2.如果数据库中新增了一列，可以使用update帮助我们在表结构中增加一列（前提是JavaBean已经配置好了新的属性以及set和get方法，并且映射文件也进行了配置）
+			3.如果原来的数据库已经存在，则直接添加数据
+		 -->
+		<!-- <property name="hibernate.hbm2ddl.auto">update</property> -->
+		<!-- validate:用来对表结构以及对应的映射文件进行验证是否一致，如果不一致，则报错 -->
+		<property name="hibernate.hbm2dd.auto">validate</property>
+		
 		<!-- 编写映射文件 -->
 		<mapping resource="com/itheima/domain/Customer.hbm.xml"/>
-	
 	</session-factory>
 </hibernate-configuration>

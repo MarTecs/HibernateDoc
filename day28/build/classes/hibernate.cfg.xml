@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+	"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<!-- 编写hibernate核心配置文件 -->
+<hibernate-configuration>
+	<session-factory>
+		
+		<!-- 5个必须的基本参数 -->
+		<property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+		<property name="hibernate.connection.url">jdbc:mysql:///hibernate_day01</property>
+		<property name="hibernate.connection.username">root</property>
+		<property name="hibernate.connection.password">1018222wxw</property>
+		
+		<!-- 配置数据库的方言 -->
+		<property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+		
+		
+		<!-- 编写映射文件 -->
+		<mapping resource="com/itheima/domain/Customer.hbm.xml"/>
+	
+	</session-factory>
+</hibernate-configuration>
